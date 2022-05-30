@@ -19,13 +19,21 @@
             <link rel="shortcut icon" href="../../../../../_static/pin_32.png"/>
             <link rel="index" title="Index" href="../../../../../genindex.html" />
             <link rel="search" title="Search" href="../../../../../search.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -600,13 +608,10 @@
 <span class="sd">    Waits for a file or directory to be present on FTP.</span>
 
 <span class="sd">    :param path: Remote file or directory path</span>
-<span class="sd">    :type path: str</span>
 <span class="sd">    :param fail_on_transient_errors: Fail on all errors,</span>
 <span class="sd">        including 4xx transient errors. Default True.</span>
-<span class="sd">    :type fail_on_transient_errors: bool</span>
 <span class="sd">    :param ftp_conn_id: The :ref:`ftp connection id &lt;howto/connection:ftp&gt;`</span>
 <span class="sd">        reference to run the sensor against.</span>
-<span class="sd">    :type ftp_conn_id: str</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="FTPSensor.template_fields"><a class="viewcode-back" href="../../../../../_api/airflow/providers/ftp/sensors/ftp/index.html#airflow.providers.ftp.sensors.ftp.FTPSensor.template_fields">[docs]</a>    <span class="n">template_fields</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">,)</span></div>

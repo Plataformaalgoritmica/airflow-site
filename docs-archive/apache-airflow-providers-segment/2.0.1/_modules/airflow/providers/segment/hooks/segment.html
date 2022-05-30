@@ -19,13 +19,21 @@
             <link rel="shortcut icon" href="../../../../../_static/pin_32.png"/>
             <link rel="index" title="Index" href="../../../../../genindex.html" />
             <link rel="search" title="Search" href="../../../../../search.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -608,10 +616,8 @@
 <span class="sd">    :param segment_conn_id: the name of the connection that has the parameters</span>
 <span class="sd">        we need to connect to Segment. The connection should be type `json` and include a</span>
 <span class="sd">        write_key security token in the `Extras` field.</span>
-<span class="sd">    :type segment_conn_id: str</span>
 <span class="sd">    :param segment_debug_mode: Determines whether Segment should run in debug mode.</span>
 <span class="sd">        Defaults to False</span>
-<span class="sd">    :type segment_debug_mode: bool</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">        You must include a JSON structure in the `Extras` field.</span>

@@ -19,13 +19,21 @@
             <link rel="shortcut icon" href="../../../../../_static/pin_32.png"/>
             <link rel="index" title="Index" href="../../../../../genindex.html" />
             <link rel="search" title="Search" href="../../../../../search.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -614,15 +622,10 @@
 <span class="sd">        :ref:`howto/operator:TelegramOperator`</span>
 
 <span class="sd">    :param telegram_conn_id: Telegram connection ID which its password is Telegram API token</span>
-<span class="sd">    :type telegram_conn_id: str</span>
 <span class="sd">    :param token: Telegram API Token</span>
-<span class="sd">    :type token: str</span>
 <span class="sd">    :param chat_id: Telegram chat ID for a chat/channel/group</span>
-<span class="sd">    :type chat_id: str</span>
 <span class="sd">    :param text: Message to be sent on telegram</span>
-<span class="sd">    :type text: str</span>
 <span class="sd">    :param telegram_kwargs: Extra args to be passed to telegram client</span>
-<span class="sd">    :type telegram_kwargs: dict</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="TelegramOperator.template_fields"><a class="viewcode-back" href="../../../../../_api/airflow/providers/telegram/operators/telegram/index.html#airflow.providers.telegram.operators.telegram.TelegramOperator.template_fields">[docs]</a>    <span class="n">template_fields</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;chat_id&#39;</span><span class="p">)</span></div>

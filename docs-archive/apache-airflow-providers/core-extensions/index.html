@@ -20,13 +20,23 @@
             <link rel="search" title="Search" href="../search.html" />
             <link rel="next" title="Auth backends" href="auth-backends.html" />
             <link rel="prev" title="Software integrations" href="../operators-and-hooks-ref/software.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        /* We explicitly disable cookie tracking to avoid privacy issues */
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://analytics.apache.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '13']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Matomo Code -->
 
     
 </head><body class="td-section">
@@ -270,19 +280,6 @@
             <div class="content-drawer">
                 <div class="td-sidebar">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="../search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -408,19 +405,6 @@
             
             
     <div class="td-sidebar desktop-only d-print-none">
-
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
 
 <div class="searchb-box">
     <form class="search-form" action="../search.html" method="get">
@@ -594,10 +578,12 @@ core by implementations of Core features, specific to certain providers.</p>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#apache-pig">Apache Pig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#apache-spark">Apache Spark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#apache-sqoop">Apache Sqoop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connections.html#arangodb">ArangoDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#asana">Asana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#ibm-cloudant">IBM Cloudant</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#kubernetes">Kubernetes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#databricks">Databricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connections.html#dbt-cloud">dbt Cloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#dingding">Dingding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#discord">Discord</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#docker">Docker</a></li>
@@ -605,6 +591,7 @@ core by implementations of Core features, specific to certain providers.</p>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#exasol">Exasol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#facebook">Facebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#file-transfer-protocol-ftp">File Transfer Protocol (FTP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connections.html#github">Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#google">Google</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#grpc">gRPC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connections.html#hashicorp">Hashicorp</a></li>
@@ -643,12 +630,15 @@ core by implementations of Core features, specific to certain providers.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="extra-links.html">Extra Links</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="extra-links.html#amazon">Amazon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra-links.html#databricks">Databricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra-links.html#dbt-cloud">dbt Cloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra-links.html#google">Google</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra-links.html#microsoft-azure">Microsoft Azure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra-links.html#qubole">Qubole</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="logging.html">Writing logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logging.html#alibaba">Alibaba</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html#amazon">Amazon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html#elasticsearch">Elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html#google">Google</a></li>

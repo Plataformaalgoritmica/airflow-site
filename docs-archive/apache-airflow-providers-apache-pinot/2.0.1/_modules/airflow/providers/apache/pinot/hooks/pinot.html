@@ -19,13 +19,21 @@
             <link rel="shortcut icon" href="../../../../../../_static/pin_32.png"/>
             <link rel="index" title="Index" href="../../../../../../genindex.html" />
             <link rel="search" title="Search" href="../../../../../../search.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -606,13 +614,10 @@
 <span class="sd">    following PR: https://github.com/apache/incubator-pinot/pull/4110</span>
 
 <span class="sd">    :param conn_id: The name of the connection to use.</span>
-<span class="sd">    :type conn_id: str</span>
 <span class="sd">    :param cmd_path: The filepath to the pinot-admin.sh executable</span>
-<span class="sd">    :type cmd_path: str</span>
 <span class="sd">    :param pinot_admin_system_exit: If true, the result is evaluated based on the status code.</span>
 <span class="sd">                                    Otherwise, the result is evaluated as a failure if &quot;Error&quot; or</span>
 <span class="sd">                                    &quot;Exception&quot; is in the output message.</span>
-<span class="sd">    :type pinot_admin_system_exit: bool</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -639,9 +644,7 @@
 <span class="sd">        Add Pinot schema by run AddSchema command</span>
 
 <span class="sd">        :param schema_file: Pinot schema file</span>
-<span class="sd">        :type schema_file: str</span>
 <span class="sd">        :param with_exec: bool</span>
-<span class="sd">        :type with_exec: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AddSchema&quot;</span><span class="p">]</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;-controllerHost&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">]</span>
@@ -656,9 +659,7 @@
 <span class="sd">        Add Pinot table with run AddTable command</span>
 
 <span class="sd">        :param file_path: Pinot table configure file</span>
-<span class="sd">        :type file_path: str</span>
 <span class="sd">        :param with_exec: bool</span>
-<span class="sd">        :type with_exec: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AddTable&quot;</span><span class="p">]</span>
         <span class="n">cmd</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;-controllerHost&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">]</span>
@@ -769,9 +770,7 @@
 <span class="sd">        Run command with pinot-admin.sh</span>
 
 <span class="sd">        :param cmd: List of command going to be run by pinot-admin.sh script</span>
-<span class="sd">        :type cmd: list</span>
 <span class="sd">        :param verbose:</span>
-<span class="sd">        :type verbose: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd_path</span><span class="p">]</span>
         <span class="n">command</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
@@ -853,9 +852,7 @@
 
 <span class="sd">        :param sql: the sql statement to be executed (str) or a list of</span>
 <span class="sd">            sql statements to execute</span>
-<span class="sd">        :type sql: str</span>
 <span class="sd">        :param parameters: The parameters to render the SQL query with.</span>
-<span class="sd">        :type parameters: dict or iterable</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_conn</span><span class="p">()</span> <span class="k">as</span> <span class="n">cur</span><span class="p">:</span>
             <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
@@ -867,9 +864,7 @@
 
 <span class="sd">        :param sql: the sql statement to be executed (str) or a list of</span>
 <span class="sd">            sql statements to execute</span>
-<span class="sd">        :type sql: str or list</span>
 <span class="sd">        :param parameters: The parameters to render the SQL query with.</span>
-<span class="sd">        :type parameters: dict or iterable</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_conn</span><span class="p">()</span> <span class="k">as</span> <span class="n">cur</span><span class="p">:</span>
             <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>

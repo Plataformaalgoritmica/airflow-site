@@ -20,13 +20,23 @@
             <link rel="search" title="Search" href="search.html" />
             <link rel="next" title="Installation from PyPI" href="installing-from-pypi.html" />
             <link rel="prev" title="Community Providers" href="howto/create-update-providers.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        /* We explicitly disable cookie tracking to avoid privacy issues */
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://analytics.apache.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '13']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Matomo Code -->
 
     
 </head><body class="td-section">
@@ -270,19 +280,6 @@
             <div class="content-drawer">
                 <div class="td-sidebar">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -405,19 +402,6 @@
             
             
     <div class="td-sidebar desktop-only d-print-none">
-
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
 
 <div class="searchb-box">
     <form class="search-form" action="search.html" method="get">
@@ -601,6 +585,8 @@
 
     <li><a href="/docs/apache-airflow-providers-apache-sqoop/stable/installing-providers-from-sources.html"><code>Apache Sqoop</code></a></li>
 
+    <li><a href="/docs/apache-airflow-providers-arangodb/stable/installing-providers-from-sources.html"><code>ArangoDB</code></a></li>
+
     <li><a href="/docs/apache-airflow-providers-asana/stable/installing-providers-from-sources.html"><code>Asana</code></a></li>
 
     <li><a href="/docs/apache-airflow-providers-celery/stable/installing-providers-from-sources.html"><code>Celery</code></a></li>
@@ -612,6 +598,8 @@
     <li><a href="/docs/apache-airflow-providers-databricks/stable/installing-providers-from-sources.html"><code>Databricks</code></a></li>
 
     <li><a href="/docs/apache-airflow-providers-datadog/stable/installing-providers-from-sources.html"><code>Datadog</code></a></li>
+
+    <li><a href="/docs/apache-airflow-providers-dbt-cloud/stable/installing-providers-from-sources.html"><code>dbt Cloud</code></a></li>
 
     <li><a href="/docs/apache-airflow-providers-dingding/stable/installing-providers-from-sources.html"><code>Dingding</code></a></li>
 
@@ -626,6 +614,8 @@
     <li><a href="/docs/apache-airflow-providers-facebook/stable/installing-providers-from-sources.html"><code>Facebook</code></a></li>
 
     <li><a href="/docs/apache-airflow-providers-ftp/stable/installing-providers-from-sources.html"><code>File Transfer Protocol (FTP)</code></a></li>
+
+    <li><a href="/docs/apache-airflow-providers-github/stable/installing-providers-from-sources.html"><code>Github</code></a></li>
 
     <li><a href="/docs/apache-airflow-providers-google/stable/installing-providers-from-sources.html"><code>Google</code></a></li>
 

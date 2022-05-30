@@ -19,13 +19,21 @@
             <link rel="shortcut icon" href="../../../../../_static/pin_32.png"/>
             <link rel="index" title="Index" href="../../../../../genindex.html" />
             <link rel="search" title="Search" href="../../../../../search.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -599,16 +607,11 @@
 <span class="sd">    This operator is designed to use Jira Python SDK: http://jira.readthedocs.io</span>
 
 <span class="sd">    :param jira_conn_id: reference to a pre-defined Jira Connection</span>
-<span class="sd">    :type jira_conn_id: str</span>
 <span class="sd">    :param jira_method: method name from Jira Python SDK to be called</span>
-<span class="sd">    :type jira_method: str</span>
 <span class="sd">    :param jira_method_args: required method parameters for the jira_method. (templated)</span>
-<span class="sd">    :type jira_method_args: dict</span>
 <span class="sd">    :param result_processor: function to further process the response from Jira</span>
-<span class="sd">    :type result_processor: function</span>
 <span class="sd">    :param get_jira_resource_method: function or operator to get jira resource</span>
 <span class="sd">                                    on which the provided jira_method will be executed</span>
-<span class="sd">    :type get_jira_resource_method: function</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="JiraOperator.template_fields"><a class="viewcode-back" href="../../../../../_api/airflow/providers/jira/operators/jira/index.html#airflow.providers.jira.operators.jira.JiraOperator.template_fields">[docs]</a>    <span class="n">template_fields</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jira_method_args&quot;</span><span class="p">,)</span></div>

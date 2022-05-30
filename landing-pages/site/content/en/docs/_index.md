@@ -51,6 +51,8 @@ Providers packages include integrations with third party projects. They are upda
 
   <li><a href="/docs/apache-airflow-providers-apache-sqoop/stable/index.html"><code>Apache Sqoop</code></a></li>
 
+  <li><a href="/docs/apache-airflow-providers-arangodb/stable/index.html"><code>ArangoDB</code></a></li>
+
   <li><a href="/docs/apache-airflow-providers-asana/stable/index.html"><code>Asana</code></a></li>
 
   <li><a href="/docs/apache-airflow-providers-celery/stable/index.html"><code>Celery</code></a></li>
@@ -62,6 +64,8 @@ Providers packages include integrations with third party projects. They are upda
   <li><a href="/docs/apache-airflow-providers-databricks/stable/index.html"><code>Databricks</code></a></li>
 
   <li><a href="/docs/apache-airflow-providers-datadog/stable/index.html"><code>Datadog</code></a></li>
+
+  <li><a href="/docs/apache-airflow-providers-dbt-cloud/stable/index.html"><code>DBT cloud</code></a></li>
 
   <li><a href="/docs/apache-airflow-providers-dingding/stable/index.html"><code>Dingding</code></a></li>
 
@@ -76,6 +80,8 @@ Providers packages include integrations with third party projects. They are upda
   <li><a href="/docs/apache-airflow-providers-facebook/stable/index.html"><code>Facebook</code></a></li>
 
   <li><a href="/docs/apache-airflow-providers-ftp/stable/index.html"><code>File Transfer Protocol (FTP)</code></a></li>
+
+  <li><a href="/docs/apache-airflow-providers-github/stable/index.html"><code>Github</code></a></li>
 
   <li><a href="/docs/apache-airflow-providers-google/stable/index.html"><code>Google</code></a></li>
 

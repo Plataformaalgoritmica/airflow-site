@@ -21,13 +21,21 @@
             <link rel="search" title="Search" href="../../../../../../search.html" />
             <link rel="next" title="airflow.providers.jenkins.operators" href="../../operators/index.html" />
             <link rel="prev" title="airflow.providers.jenkins.hooks" href="../index.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.apache.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '13']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo -->
 
     
 </head><body class="td-section">
@@ -589,9 +597,11 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="airflow.providers.jenkins.hooks.jenkins.JenkinsHook">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airflow.providers.jenkins.hooks.jenkins.</span></span><span class="sig-name descname"><span class="pre">JenkinsHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">default_conn_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../_modules/airflow/providers/jenkins/hooks/jenkins.html#JenkinsHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#airflow.providers.jenkins.hooks.jenkins.JenkinsHook" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">airflow.providers.jenkins.hooks.jenkins.</span></span><span class="sig-name descname"><span class="pre">JenkinsHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">default_conn_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../_modules/airflow/providers/jenkins/hooks/jenkins.html#JenkinsHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#airflow.providers.jenkins.hooks.jenkins.JenkinsHook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="/docs/apache-airflow/stable/_api/airflow/hooks/base/index.html#airflow.hooks.base.BaseHook" title="(in apache-airflow v2.3.0.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">airflow.hooks.base.BaseHook</span></code></a></p>
 <p>Hook to manage connection to jenkins server</p>
+<dl class="field-list simple">
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="airflow.providers.jenkins.hooks.jenkins.JenkinsHook.conn_name_attr">
 <span class="sig-name descname"><span class="pre">conn_name_attr</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">conn_id</span></em><a class="reference internal" href="../../../../../../_modules/airflow/providers/jenkins/hooks/jenkins.html#JenkinsHook.conn_name_attr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#airflow.providers.jenkins.hooks.jenkins.JenkinsHook.conn_name_attr" title="Permalink to this definition">¶</a></dt>
@@ -614,8 +624,10 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="airflow.providers.jenkins.hooks.jenkins.JenkinsHook.get_jenkins_server">
-<span class="sig-name descname"><span class="pre">get_jenkins_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">jenkins.Jenkins</span></span></span><a class="reference internal" href="../../../../../../_modules/airflow/providers/jenkins/hooks/jenkins.html#JenkinsHook.get_jenkins_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#airflow.providers.jenkins.hooks.jenkins.JenkinsHook.get_jenkins_server" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_jenkins_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../_modules/airflow/providers/jenkins/hooks/jenkins.html#JenkinsHook.get_jenkins_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#airflow.providers.jenkins.hooks.jenkins.JenkinsHook.get_jenkins_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get jenkins server</p>
+<dl class="field-list simple">
+</dl>
 </dd></dl>
 
 </dd></dl>

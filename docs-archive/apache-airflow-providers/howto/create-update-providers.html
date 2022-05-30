@@ -20,13 +20,23 @@
             <link rel="search" title="Search" href="../search.html" />
             <link rel="next" title="Installing Providers from Sources" href="../installing-from-sources.html" />
             <link rel="prev" title="Secret backends" href="../core-extensions/secrets-backends.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        /* We explicitly disable cookie tracking to avoid privacy issues */
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://analytics.apache.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '13']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Matomo Code -->
 
     
 </head><body class="td-section">
@@ -270,19 +280,6 @@
             <div class="content-drawer">
                 <div class="td-sidebar">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="../search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -321,6 +318,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../core-extensions/index.html">Core Extensions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Update community providers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-creating-a-new-community-provider">How-to creating a new community provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-provider-features">Optional provider features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-providers-with-dynamic-task-mapping">Using Providers with dynamic task mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#having-sensors-return-xom-values">Having sensors return XOM values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-update-a-community-provider">How-to Update a community provider</a></li>
 </ul>
 </li>
@@ -406,19 +406,6 @@
             
     <div class="td-sidebar desktop-only d-print-none">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="../search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -457,6 +444,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../core-extensions/index.html">Core Extensions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Update community providers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-creating-a-new-community-provider">How-to creating a new community provider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-provider-features">Optional provider features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-providers-with-dynamic-task-mapping">Using Providers with dynamic task mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#having-sensors-return-xom-values">Having sensors return XOM values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-update-a-community-provider">How-to Update a community provider</a></li>
 </ul>
 </li>
@@ -641,24 +631,6 @@ breeze and I'll run unit tests for my Hook.</p>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="update-airflow-validation-tests">
-<h3>Update Airflow validation tests<a class="headerlink" href="#update-airflow-validation-tests" title="Permalink to this headline">¶</a></h3>
-<p>There are some tests that Airflow performs to ensure consistency that is related to the providers.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>airflow/scripts/in_container/
-└── run_install_and_test_provider_packages.sh
-tests/core/
-└── test_providers_manager.py
-</pre></div>
-</div>
-</div></blockquote>
-<p>Change expected number of providers, hooks and connections if needed in <code class="docutils literal notranslate"><span class="pre">run_install_and_test_provider_packages.sh</span></code> file.</p>
-<p>Add your provider information in the following variables in <code class="docutils literal notranslate"><span class="pre">test_providers_manager.py</span></code>:</p>
-<ul class="simple">
-<li><p>add your provider to <code class="docutils literal notranslate"><span class="pre">ALL_PROVIDERS</span></code> list;</p></li>
-<li><p>add your provider into <code class="docutils literal notranslate"><span class="pre">CONNECTIONS_LIST</span></code> if your provider create a new connection type.</p></li>
-</ul>
-</div>
 <div class="section" id="integration-tests">
 <h3>Integration tests<a class="headerlink" href="#integration-tests" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference external" href="https://github.com/apache/airflow/blob/main/TESTING.rst#airflow-integration-tests">Airflow Integration Tests</a></p>
@@ -840,6 +812,127 @@ main Airflow documentation that involves some steps with the providers is also w
 </div></blockquote>
 </div>
 </div>
+<div class="section" id="optional-provider-features">
+<h2>Optional provider features<a class="headerlink" href="#optional-provider-features" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature is available in Airflow 2.3+.</p>
+</div>
+</div></blockquote>
+<p>Some providers might provide optional features, which are only available when some packages or libraries
+are installed. Such features will typically result in <code class="docutils literal notranslate"><span class="pre">ImportErrors</span></code> however those import errors
+should be silently ignored rather than pollute the logs of Airflow with false warnings. False warnings
+are a very bad pattern, as they tend to turn into blind spots, so avoiding false warnings is encouraged.
+However until Airflow 2.3, Airflow had no mechanism to selectively ignore &quot;known&quot; ImportErrors. So
+Airflow 2.1 and 2.2 silently ignored all ImportErrors coming from providers with actually lead to
+ignoring even important import errors - without giving the clue to Airflow users that there is something
+missing in provider dependencies.</p>
+<p>In Airflow 2.3, new exception <code class="xref py py-class docutils literal notranslate"><span class="pre">OptionalProviderFeatureException</span></code> has been
+introduced and Providers can use the exception to signal that the ImportError (or any other error) should
+be ignored by Airflow ProvidersManager. However this Exception is only available in Airflow 2.3 so if
+providers would like to remain compatible with Airflow 2.1 and 2.2, they should continue throwing
+the ImportError exception.</p>
+<p>Example code (from Plyvel Hook, part of the Google Provider) explains how such conditional error handling
+should be implemented to keep compatibility with Airflow 2.1 and 2.2</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">plyvel</span>
+    <span class="kn">from</span> <span class="nn">plyvel</span> <span class="kn">import</span> <span class="n">DB</span>
+
+    <span class="kn">from</span> <span class="nn">airflow.exceptions</span> <span class="kn">import</span> <span class="n">AirflowException</span>
+    <span class="kn">from</span> <span class="nn">airflow.hooks.base</span> <span class="kn">import</span> <span class="n">BaseHook</span>
+
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Plyvel is an optional feature and if imports are missing, it should be silently ignored</span>
+    <span class="c1"># As of Airflow 2.3  and above the operator can throw OptionalProviderFeatureException</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">airflow.exceptions</span> <span class="kn">import</span> <span class="n">AirflowOptionalProviderFeatureException</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># However, in order to keep backwards-compatibility with Airflow 2.1 and 2.2, if the</span>
+        <span class="c1"># 2.3 exception cannot be imported, the original ImportError should be raised.</span>
+        <span class="c1"># This try/except can be removed when the provider depends on Airflow &gt;= 2.3.0</span>
+        <span class="k">raise</span> <span class="n">e</span>
+    <span class="k">raise</span> <span class="n">AirflowOptionalProviderFeatureException</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="using-providers-with-dynamic-task-mapping">
+<h2>Using Providers with dynamic task mapping<a class="headerlink" href="#using-providers-with-dynamic-task-mapping" title="Permalink to this headline">¶</a></h2>
+<p>Airflow 2.3 added <a class="reference external" href="https://cwiki.apache.org/confluence/display/AIRFLOW/AIP-42+Dynamic+Task+Mapping">Dynamic Task Mapping</a>
+and it added the possibility of assigning a unique key to each task. Which means that when such dynamically
+mapped task wants to retrieve a value from XCom (for example in case an extra link should calculated)
+it should always check if the ti_key value passed is not None an only then retrieve the XCom value using
+XCom.get_value. This allows to keep backwards compatibility with earlier versions of Airflow.</p>
+<p>Typical code to access XCom Value in providers that want to keep backwards compatibility should look similar to
+this (note the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">ti_key</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None:</span></code> condition).</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_link</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">operator</span><span class="p">,</span>
+    <span class="n">dttm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ti_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;TaskInstanceKey&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="k">if</span> <span class="n">ti_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_ids</span> <span class="o">=</span> <span class="n">XCom</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;job_id&quot;</span><span class="p">,</span> <span class="n">ti_key</span><span class="o">=</span><span class="n">ti_key</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">dttm</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">job_ids</span> <span class="o">=</span> <span class="n">XCom</span><span class="o">.</span><span class="n">get_one</span><span class="p">(</span>
+            <span class="n">key</span><span class="o">=</span><span class="s2">&quot;job_id&quot;</span><span class="p">,</span>
+            <span class="n">dag_id</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">dag</span><span class="o">.</span><span class="n">dag_id</span><span class="p">,</span>
+            <span class="n">task_id</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">task_id</span><span class="p">,</span>
+            <span class="n">execution_date</span><span class="o">=</span><span class="n">dttm</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">job_ids</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_ids</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="n">job_ids</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">BIGQUERY_JOB_DETAILS_LINK_FMT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="having-sensors-return-xom-values">
+<h2>Having sensors return XOM values<a class="headerlink" href="#having-sensors-return-xom-values" title="Permalink to this headline">¶</a></h2>
+<p>In Airflow 2.3, sensor operators will be able to return XCOM values. This is achieved by returning an instance of the <code class="docutils literal notranslate"><span class="pre">PokeReturnValue</span></code> object at the end of the <code class="docutils literal notranslate"><span class="pre">poke()</span></code> method:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">airflow.sensors.base</span> <span class="kn">import</span> <span class="n">PokeReturnValue</span>
+
+
+<span class="k">class</span> <span class="nc">SensorWithXcomValue</span><span class="p">(</span><span class="n">BaseSensorOperator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">poke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">PokeReturnValue</span><span class="p">]:</span>
+        <span class="c1"># ...</span>
+        <span class="n">is_done</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># set to true if the sensor should stop poking.</span>
+        <span class="n">xcom_value</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># return value of the sensor operator to be pushed to XCOM.</span>
+        <span class="k">return</span> <span class="n">PokeReturnValue</span><span class="p">(</span><span class="n">is_done</span><span class="p">,</span> <span class="n">xcom_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To implement a sensor operator that pushes a XCOM value and supports both version 2.3 and pre-2.3, you need to explicitly push the XCOM value if the version is pre-2.3.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">airflow.sensors.base</span> <span class="kn">import</span> <span class="n">PokeReturnValue</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">PokeReturnValue</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">class</span> <span class="nc">SensorWithXcomValue</span><span class="p">(</span><span class="n">BaseSensorOperator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">poke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># ...</span>
+        <span class="n">is_done</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># set to true if the sensor should stop poking.</span>
+        <span class="n">xcom_value</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># return value of the sensor operator to be pushed to XCOM.</span>
+        <span class="k">if</span> <span class="n">PokeReturnValue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">PokeReturnValue</span><span class="p">(</span><span class="n">is_done</span><span class="p">,</span> <span class="n">xcom_value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">is_done</span><span class="p">:</span>
+                <span class="n">context</span><span class="p">[</span><span class="s2">&quot;ti&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">xcom_push</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;xcom_key&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">xcom_value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">is_done</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="how-to-update-a-community-provider">
 <h2>How-to Update a community provider<a class="headerlink" href="#how-to-update-a-community-provider" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://github.com/apache/airflow/blob/main/dev/README_RELEASE_PROVIDER_PACKAGES.md#provider-packages-versioning">Provider packages versioning</a></p>
@@ -924,11 +1017,13 @@ main Airflow documentation that involves some steps with the providers is also w
 <li><a class="reference internal" href="#">Community Providers</a><ul>
 <li><a class="reference internal" href="#how-to-creating-a-new-community-provider">How-to creating a new community provider</a><ul>
 <li><a class="reference internal" href="#initial-code-and-unit-tests">Initial Code and Unit Tests</a></li>
-<li><a class="reference internal" href="#update-airflow-validation-tests">Update Airflow validation tests</a></li>
 <li><a class="reference internal" href="#integration-tests">Integration tests</a></li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#optional-provider-features">Optional provider features</a></li>
+<li><a class="reference internal" href="#using-providers-with-dynamic-task-mapping">Using Providers with dynamic task mapping</a></li>
+<li><a class="reference internal" href="#having-sensors-return-xom-values">Having sensors return XOM values</a></li>
 <li><a class="reference internal" href="#how-to-update-a-community-provider">How-to Update a community provider</a></li>
 </ul>
 </li>

@@ -11,7 +11,7 @@ menu:
 
 # Ecosystem
 
-Those resources and services are not maintained, nor endorsed by the Apache Airflow Community and Apache Airflow project (maintained by the Committers and the Airflow PMC). Use them at your sole discretion. The community does not verify the licences nor validity of those tools, so it's your responsibility to verify them.
+These resources and services are not maintained, nor endorsed by the Apache Airflow Community and Apache Airflow project (maintained by the Committers and the Airflow PMC). Use them at your sole discretion. The community does not verify the licences nor validity of those tools, so it's your responsibility to verify them.
 
 If you would you like to be included on this page, please reach out to the [Apache Airflow dev or user mailing list](https://airflow.apache.org/community/) and let us know or simply open a Pull Request to that page.
 
@@ -33,7 +33,7 @@ If you would you like to be included on this page, please reach out to the [Apac
 
 ## Airflow as a Service
 
-[Astronomer](https://www.astronomer.io/) - Managed Apache Airflow in Astronomer Cloud, or self-hosted within your environment
+[Astro](https://www.astronomer.io/product) - Provided by Astronomer, Astro is the modern data orchestration platform, powered by Apache Airflow. Astro enables data engineers, data scientists, and data analysts to build, run, and observe pipelines-as-code.
 
 [Google Cloud Composer](https://cloud.google.com/composer) - Managed Apache Airflow service on Google Cloud Platform
 
@@ -52,6 +52,12 @@ If you would you like to be included on this page, please reach out to the [Apac
 [Airflow ECR Plugin](https://github.com/asandeep/airflow-ecr-plugin) - Plugin to refresh AWS ECR login token at regular intervals. This is helpful where DockerOperator needs to pull images hosted on ECR.
 
 &nbsp;
+
+## Async Providers
+
+[Astronomer Providers](https://github.com/astronomer/astronomer-providers) - A collection of Async Operators and Sensors for Apache Airflow built and maintained by Astronomer.
+
+[Airflow Kafka Provider](https://github.com/astronomer/airflow-provider-kafka) - Apache Airflow Kafka provider containing Deferrable Operators & Sensors.
 
 ## Third Party Airflow Helm Charts
 

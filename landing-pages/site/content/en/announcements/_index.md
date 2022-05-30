@@ -13,6 +13,94 @@ menu:
 
 **Note:** Follow [@ApacheAirflow](https://twitter.com/ApacheAirflow) on Twitter for the latest news and announcements!
 
+# May 25, 2022
+
+We’ve just released Apache **Airflow 2.3.1**.
+
+📦 PyPI: https://pypi.org/project/apache-airflow/2.3.1/ \
+📚 Docs: https://airflow.apache.org/docs/apache-airflow/2.3.1 \
+🛠️ Release Notes: https://airflow.apache.org/docs/apache-airflow/2.3.1/release_notes.html \
+🪶 Sources: https://airflow.apache.org/docs/apache-airflow/2.3.1/installation/installing-from-sources.html
+
+# May 20, 2022
+
+We've just released Apache **Airflow Helm chart 1.6.0**.
+
+📦 ArtifactHub: https://artifacthub.io/packages/helm/apache-airflow/airflow \
+📚 Docs: https://airflow.apache.org/docs/helm-chart/1.6.0/ \
+🛠️ Release Notes: https://airflow.apache.org/docs/helm-chart/1.6.0/release_notes.html \
+🪶 Sources: https://airflow.apache.org/docs/helm-chart/1.6.0/installing-helm-chart-from-sources.html
+
+# April 30, 2022
+
+We’ve just released Apache **Airflow 2.3.0**. You can read more in the [What's new in Apache Airflow 2.3.0]({{< ref "blog/airflow-2.3.0/index.md" >}}) blog post.
+
+📦 PyPI: https://pypi.org/project/apache-airflow/2.3.0/ \
+📚 Docs: https://airflow.apache.org/docs/apache-airflow/2.3.0 \
+🛠️ Release Notes: https://airflow.apache.org/docs/apache-airflow/2.3.0/release_notes.html \
+🪶 Sources: https://airflow.apache.org/docs/apache-airflow/2.3.0/installation/installing-from-sources.html
+
+# April 04, 2022
+
+We’ve just released Apache **Airflow 2.2.5**.
+
+📦 PyPI: https://pypi.org/project/apache-airflow/2.2.5/ \
+📚 Docs: https://airflow.apache.org/docs/apache-airflow/2.2.5/ \
+🛠️ Changelog: https://airflow.apache.org/docs/apache-airflow/2.2.5/changelog.html \
+🪶 Sources: https://airflow.apache.org/docs/apache-airflow/2.2.5/installation/installing-from-sources.html
+
+# March 11, 2022
+
+We've just released Apache **Airflow Helm chart 1.5.0**.
+
+📦 ArtifactHub: https://artifacthub.io/packages/helm/apache-airflow/airflow \
+📚 Docs: https://airflow.apache.org/docs/helm-chart/1.5.0/ \
+🛠️ Changelog: https://airflow.apache.org/docs/helm-chart/1.5.0/changelog.html \
+🪶 Sources: https://airflow.apache.org/docs/helm-chart/1.5.0/installing-helm-chart-from-sources.html
+
+# March 11, 2022
+
+
+[Airflow Summit 2022](https://airflowsummit.org)
+
+The biggest Airflow Event of the Year returns May 23–27! Airflow Summit 2022 will bring together the global
+community of Apache Airflow practitioners and data leaders.
+
+### What’s on the Agenda
+
+During the free conference, you will hear about Apache Airflow best practices, trends in building data
+pipelines, data governance, Airflow and machine learning, and the future of Airflow.
+There will also be a series of presentations on non-code contributions driving the open-source project.
+
+### How to Attend
+
+This year’s edition will include a variety of online sessions across different time zones. Additionally,
+you can take part in local in-person events organized worldwide for data communities
+to watch the event and network.
+
+### Interested?
+
+🪶 [Register for Airflow Summit 2022](https://www.crowdcast.io/e/airflowsummit2022/register?utm_campaign=Astronomer_marketing&utm_source=Astronomer%20website&utm_medium=website&utm_term=Airflow%20Summit) today! \
+🗣️ If you have an Airflow story to share, [join as a speaker](https://sessionize.com/airflow-summit-2022/) \
+✨ [Follow Airflow Summit on LinkedIn](https://www.linkedin.com/company/airflow-summit/) to stay current with the latest updates. \
+🤝 [Check out the in-person events](https://airflowsummit.org/in-person-events/) planned for Airflow Summit 2022.
+
+# February 22, 2022
+
+We’ve just released Apache **Airflow 2.2.4**.
+
+📦 PyPI: https://pypi.org/project/apache-airflow/2.2.4/ \
+📚 Docs: https://airflow.apache.org/docs/apache-airflow/2.2.4/ \
+🛠️ Changelog: https://airflow.apache.org/docs/apache-airflow/2.2.4/changelog.html \
+🪶 Sources: https://airflow.apache.org/docs/apache-airflow/2.2.4/installation/installing-from-sources.html
+
+# February 19, 2022
+
+Airflow PMC welcomes two new Airlow Committers:
+
+* **Malthe Borch** ([@malthe](https://github.com/malthe))
+* **Josh Fell** ([@josh-fell](https://github.com/josh-fell))
+
 # January 10, 2022
 
 We've just released Apache **Airflow Helm chart 1.4.0**.
@@ -137,7 +225,7 @@ We've just released Apache **Airflow 2.1.1**.
 Airflow PMC welcomes 2 new committers:
 
 - **Jed Cunningham** ([@jedcunningham](https://github.com/jedcunningham))
-- **Tzu-ping Chung** ([@uranusjr](https://github.com/uranusjr)
+- **Tzu-ping Chung** ([@uranusjr](https://github.com/uranusjr))
 
 # May 21, 2021
 

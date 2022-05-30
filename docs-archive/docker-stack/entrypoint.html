@@ -11,20 +11,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Entrypoint &mdash; docker-stack Documentation</title>
     <link rel="stylesheet" href="_static/_gen/css/main.min.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+            <link rel="stylesheet" type="text/css" href="_static/_gen/css/main.min.css" />
             <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
             <link rel="stylesheet" type="text/css" href="_static/_gen/css/main-custom.min.css" />
             <link rel="shortcut icon" href="_static/pin_32.png"/>
             <link rel="index" title="Index" href="genindex.html" />
             <link rel="search" title="Search" href="search.html" />
-            <link rel="next" title="Recipes" href="recipes.html" />
+            <link rel="next" title="Dockerfile Changelog" href="changelog.html" />
             <link rel="prev" title="Building the image" href="build.html" />
-    <script type="application/javascript">
-        var doNotTrack = false;
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-140539454-1', 'auto');
-        ga('send', 'pageview');
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        /* We explicitly disable cookie tracking to avoid privacy issues */
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://analytics.apache.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '13']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
     </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Matomo Code -->
 
     
 </head><body class="td-section">
@@ -268,19 +280,6 @@
             <div class="content-drawer">
                 <div class="td-sidebar">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -318,7 +317,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Entrypoint</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#allowing-arbitrary-user-to-run-the-container">Allowing arbitrary user to run the container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#waits-for-airflow-db-connection">Waits for Airflow DB connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for celery broker connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for Celery broker connection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#executing-commands">Executing commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#execute-custom-code-before-the-airflow-entrypoint">Execute custom code before the Airflow entrypoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-custom-image-behaviour">Adding custom image behaviour</a></li>
@@ -331,9 +330,10 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Dockerfile Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="build-arg-ref.html">Image build arguments reference</a></li>
 </ul>
@@ -416,19 +416,6 @@
             
     <div class="td-sidebar desktop-only d-print-none">
 
-<div id="docs-version-selector" class="docs-version-selector sidebar__version-selector">
-    <a class="dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-       aria-expanded="false">
-        <span class="bodytext__medium--greyish-brown">Version: </span><span class="version">devel</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-    </div>
-    <script type="application/x-template" id="version-item-template">
-        <a class="dropdown-item"></a>
-    </script>
-</div>
-
 <div class="searchb-box">
     <form class="search-form" action="search.html" method="get">
         <input class="search-form__input" type="text" name="q" placeholder="Search docs" size="16">
@@ -466,7 +453,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Entrypoint</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#allowing-arbitrary-user-to-run-the-container">Allowing arbitrary user to run the container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#waits-for-airflow-db-connection">Waits for Airflow DB connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for celery broker connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for Celery broker connection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#executing-commands">Executing commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#execute-custom-code-before-the-airflow-entrypoint">Execute custom code before the Airflow entrypoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-custom-image-behaviour">Adding custom image behaviour</a></li>
@@ -479,9 +466,10 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Dockerfile Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="build-arg-ref.html">Image build arguments reference</a></li>
 </ul>
@@ -613,7 +601,7 @@ those formats (See <a class="reference external" href="https://docs.docker.com/e
 See <a class="reference external" href="https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir">Docker compose reference</a>
 for details. In our Quickstart Guide using Docker-Compose, the UID can be passed via the
 <code class="docutils literal notranslate"><span class="pre">AIRFLOW_UID</span></code> variable as described in
-<a class="reference external" href="/docs/apache-airflow/stable/start/docker.html#initializing-docker-compose-environment" title="(in apache-airflow v2.3.0.dev0)"><span class="xref std std-ref">Initializing docker compose environment</span></a>.</p>
+<a class="reference external" href="/docs/apache-airflow/stable/start/docker.html#initializing-docker-compose-environment" title="(in apache-airflow v2.4.0.dev0)"><span class="xref std std-ref">Initializing docker compose environment</span></a>.</p>
 <p>The user can be any UID. In case UID is different than the default
 <code class="docutils literal notranslate"><span class="pre">airflow</span></code> (UID=50000), the user will be automatically created when entering the container.</p>
 <p>In order to accommodate a number of external libraries and projects, Airflow will automatically create
@@ -637,7 +625,7 @@ the image. If you would like to extend the image and add your own packages, you 
 <code class="docutils literal notranslate"><span class="pre">umask</span> <span class="pre">0002</span></code> in front of your docker command - this way the directories created by any installation
 that need group access will also be writable for the group. This can be done for example this way:</p>
 <blockquote>
-<div><div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span> <span class="nb">umask</span> <span class="m">0002</span><span class="p">;</span> <span class="se">\</span>
+<div><div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span><span class="nb">umask</span> <span class="m">0002</span><span class="p">;</span> <span class="se">\</span>
     do_something<span class="p">;</span> <span class="se">\</span>
     do_otherthing<span class="p">;</span>
 </pre></div>
@@ -656,9 +644,9 @@ It tries <span class="target" id="index-0"></span><code class="xref std std-envv
 To disable check, set <code class="docutils literal notranslate"><span class="pre">CONNECTION_CHECK_MAX_COUNT=0</span></code>.</p>
 </div>
 <div class="section" id="waits-for-celery-broker-connection">
-<h2>Waits for celery broker connection<a class="headerlink" href="#waits-for-celery-broker-connection" title="Permalink to this headline">¶</a></h2>
+<h2>Waits for Celery broker connection<a class="headerlink" href="#waits-for-celery-broker-connection" title="Permalink to this headline">¶</a></h2>
 <p>In case CeleryExecutor is used, and one of the <code class="docutils literal notranslate"><span class="pre">scheduler</span></code>, <code class="docutils literal notranslate"><span class="pre">celery</span></code>
-commands are used the entrypoint will wait until the celery broker DB connection is available.</p>
+commands are used the entrypoint will wait until the Celery broker DB connection is available.</p>
 <p>The script detects backend type depending on the URL schema and assigns default port numbers if not specified
 in the URL. Then it loops until connection to the host/port specified can be established
 It tries <span class="target" id="index-2"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CONNECTION_CHECK_MAX_COUNT</span></code> times and sleeps <span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">CONNECTION_CHECK_SLEEP_TIME</span></code> between checks.
@@ -676,7 +664,7 @@ To disable check, set <code class="docutils literal notranslate"><span class="pr
 <span id="entrypoint-commands"></span><h2>Executing commands<a class="headerlink" href="#executing-commands" title="Permalink to this headline">¶</a></h2>
 <p>If first argument equals to “bash” - you are dropped to a bash shell or you can executes bash command
 if you specify extra arguments. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it apache/airflow:2.2.3-python3.6 bash -c <span class="s2">&quot;ls -la&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it apache/airflow:2.3.1-python3.6 bash -c <span class="s2">&quot;ls -la&quot;</span>
 total <span class="m">16</span>
 drwxr-xr-x <span class="m">4</span> airflow root <span class="m">4096</span> Jun  <span class="m">5</span> <span class="m">18</span>:12 .
 drwxr-xr-x <span class="m">1</span> root    root <span class="m">4096</span> Jun  <span class="m">5</span> <span class="m">18</span>:12 ..
@@ -686,17 +674,17 @@ drwxr-xr-x <span class="m">2</span> airflow root <span class="m">4096</span> Jun
 </div>
 <p>If first argument is equal to <code class="docutils literal notranslate"><span class="pre">python</span></code> - you are dropped in python shell or python commands are executed if
 you pass extra parameters. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; docker run -it apache/airflow:2.2.3-python3.6 python -c <span class="s2">&quot;print(&#39;test&#39;)&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; docker run -it apache/airflow:2.3.1-python3.6 python -c <span class="s2">&quot;print(&#39;test&#39;)&quot;</span>
 <span class="nb">test</span>
 </pre></div>
 </div>
 <p>If first argument equals to “airflow” - the rest of the arguments is treated as an airflow command
 to execute. Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it apache/airflow:2.2.3-python3.6 airflow webserver
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it apache/airflow:2.3.1-python3.6 airflow webserver
 </pre></div>
 </div>
 <p>If there are any other arguments - they are simply passed to the “airflow” command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; docker run -it apache/airflow:2.2.3-python3.6 <span class="nb">help</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; docker run -it apache/airflow:2.3.1-python3.6 <span class="nb">help</span>
   usage: airflow <span class="o">[</span>-h<span class="o">]</span> GROUP_OR_COMMAND ...
 
   positional arguments:
@@ -720,7 +708,7 @@ to execute. Example:</p>
       Commands:
         cheat-sheet    Display cheat sheet
         info           Show information about current Airflow and environment
-        kerberos       Start a kerberos ticket renewer
+        kerberos       Start a Kerberos ticket renewer
         plugins        Dump information about loaded plugins
         rotate-fernet-key
                        Rotate encrypted connection credentials and variables
@@ -741,9 +729,9 @@ a custom script and calling Airflow’s entrypoint as the
 last <code class="docutils literal notranslate"><span class="pre">exec</span></code> instruction in your custom one. However you have to remember to use <code class="docutils literal notranslate"><span class="pre">dumb-init</span></code> in the same
 way as it is used with Airflow’s entrypoint, otherwise you might have problems with proper signal
 propagation (See the next chapter).</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">airflow::2.3.0.dev0</span>
-<span class="k">COPY</span> my_entrypoint.sh /
-<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/usr/bin/dumb-init&quot;</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="s2">&quot;/my_entrypoint.sh&quot;</span><span class="p">]</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">airflow:2.3.1</span>
+<span class="k">COPY</span><span class="w"> </span>my_entrypoint.sh /
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/usr/bin/dumb-init&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/my_entrypoint.sh&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Your entrypoint might for example modify or add variables on the fly. For example the below
@@ -779,12 +767,13 @@ variables and checks that database is running.</p>
 you can embed into the image. You can even execute the usual components of airflow -
 <code class="docutils literal notranslate"><span class="pre">scheduler</span></code>, <code class="docutils literal notranslate"><span class="pre">webserver</span></code> in your custom script when you finish your custom setup.
 Similarly to custom entrypoint, it can be added to the image by extending it.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">airflow::2.3.0.dev0</span>
-<span class="k">COPY</span> my_after_entrypoint_script.sh /
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">airflow:2.3.1</span>
+<span class="k">COPY</span><span class="w"> </span>my_after_entrypoint_script.sh /
 </pre></div>
 </div>
-<p>And then you can run this script by running the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it apache/airflow:2.2.3-python3.6 bash -c <span class="s2">&quot;/my_after_entrypoint_script.sh&quot;</span>
+<p>Build your image and then you can run this script by running the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build . --pull --tag my-image:0.0.1
+docker run -it my-image:0.0.1 bash -c <span class="s2">&quot;/my_after_entrypoint_script.sh&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -909,14 +898,14 @@ database and creating an <code class="docutils literal notranslate"><span class=
   --env <span class="s2">&quot;_AIRFLOW_DB_UPGRADE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_CREATE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_PASSWORD=admin&quot;</span> <span class="se">\</span>
-    apache/airflow:2.2.3-python3.8 webserver
+    apache/airflow:2.3.1-python3.8 webserver
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">8080</span>:8080 <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_DB_UPGRADE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_CREATE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_PASSWORD_CMD=echo admin&quot;</span> <span class="se">\</span>
-    apache/airflow:2.2.3-python3.8 webserver
+    apache/airflow:2.3.1-python3.8 webserver
 </pre></div>
 </div>
 <p>The commands above perform initialization of the SQLite database, create admin user with admin password
@@ -954,7 +943,7 @@ you should create your custom image with dependencies baked in.</p>
   --env <span class="s2">&quot;_AIRFLOW_DB_UPGRADE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_CREATE=true&quot;</span> <span class="se">\</span>
   --env <span class="s2">&quot;_AIRFLOW_WWW_USER_PASSWORD_CMD=echo admin&quot;</span> <span class="se">\</span>
-    apache/airflow:2.2.3-python3.8 webserver
+    apache/airflow:2.3.1-python3.8 webserver
 </pre></div>
 </div>
 <p>This method is only available starting from Docker image of Airflow 2.1.1 and above.</p>
@@ -967,7 +956,7 @@ you should create your custom image with dependencies baked in.</p>
             <a rel="prev" title="Building the image" href="build.html" >
                 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" accesskey="p">Previous</button>
             </a>
-            <a rel="next" title="Recipes" href="recipes.html" >
+            <a rel="next" title="Dockerfile Changelog" href="changelog.html" >
                 <button class="btn-hollow btn-blue bodytext__medium--cerulean-blue" accesskey="n">Next</button>
             </a>
     </div>
@@ -1040,7 +1029,7 @@ you should create your custom image with dependencies baked in.</p>
 <li><a class="reference internal" href="#">Entrypoint</a><ul>
 <li><a class="reference internal" href="#allowing-arbitrary-user-to-run-the-container">Allowing arbitrary user to run the container</a></li>
 <li><a class="reference internal" href="#waits-for-airflow-db-connection">Waits for Airflow DB connection</a></li>
-<li><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for celery broker connection</a></li>
+<li><a class="reference internal" href="#waits-for-celery-broker-connection">Waits for Celery broker connection</a></li>
 <li><a class="reference internal" href="#executing-commands">Executing commands</a></li>
 <li><a class="reference internal" href="#execute-custom-code-before-the-airflow-entrypoint">Execute custom code before the Airflow entrypoint</a></li>
 <li><a class="reference internal" href="#adding-custom-image-behaviour">Adding custom image behaviour</a></li>
@@ -1214,6 +1203,7 @@ you should create your custom image with dependencies baked in.</p>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
